@@ -373,5 +373,20 @@ const bills = [
   },
 ];
 
+// Exercise #4 : Bills Total Members
+
+// จาก Exercise #1 เรามี Array bills ที่มี Value เป็น Object รายการสั่งซื้อ โดยแต่ละรายการสั่งซื้อจะเก็บข้อมูล member ที่เก็บข้อมูลสมาชิก
+// Declare ตัว Variable totalMembers โดยให้มี Value เป็นจำนวนสมาชิกทั้งหมดใน bills (โดยที่ไม่นับคนซ้ำ) โดยใช้ Built-in Array Function
+// <total-members> คือจำนวนสมาชิกทั้งหมด
+// Hint🕵🏼‍♀️ : ใช้แนวทางจาก Exercise #2 และ Exercise #3 ได้
+
 // Start coding here
-const totalMembers;
+const memberNames = bills.reduce((members, bill) => {
+  if (bill.member && !members.includes(bill.member.name)) {
+    return [...members, bill.member.name];
+  }
+  return members;
+}, []);
+
+const totalMembers = memberNames.length;
+console.log(`Unique Members Count: ${totalMembers}`);

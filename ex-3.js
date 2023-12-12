@@ -373,5 +373,15 @@ const bills = [
   },
 ];
 
+// Exercise #3 : Bill Members
+
+// จาก Exercise #1 เรามี Array bills ที่มี Value เป็น Object รายการสั่งซื้อ โดยแต่ละรายการสั่งซื้อจะเก็บข้อมูล member ที่มี Key name เก็บชื่อของสมาชิก
+// ให้ Declare ตัว Variable billMembers โดยมี Value เป็น Array ที่เก็บ String ของชื่อของสมาชิกทุกคนที่อยู่ใน bills โดยใช้ Built-in Array Function
+
 // Start coding here
-const billMembers;
+
+const billMembers = bills
+  .filter((bill) => bill.member !== null)
+  .map((bill) => bill.member.name);
+
+console.log(billMembers);
