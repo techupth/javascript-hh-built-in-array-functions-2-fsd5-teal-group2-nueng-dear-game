@@ -374,4 +374,12 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+const totalMembers = [
+  ...new Set(
+    bills.filter((mem) => mem.member !== null).map((mem) => mem.member.name)
+  ),
+];
+
+//const noDuplicate = [...new Set(totalMembers)];
+//console.log(noDuplicate);
+console.log(totalMembers);
